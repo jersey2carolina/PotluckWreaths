@@ -11,7 +11,8 @@
     <header>
         <div class="header-title">
             <h2>Potluck Wreaths</h2>
-            <!-- <form class="header-search" action="#" method="get" role="search">
+            <!-- <div class="header-row">
+                <form class="header-search" action="#" method="get" role="search">
                 <input type="text" class="search-input" placeholder="Search..." name="q" aria-label="Search">
                 <button type="submit" class="search-btn" aria-label="Search"> -->
                     <!-- Magnifier SVG icon -->
@@ -23,12 +24,14 @@
             </form>
             <select id="categoriesDropdown" class="categories-dropdown" aria-label="Categories">
                 <option value="">Categories</option>
-                <option value="wreaths">Wreaths</option>
-                 <option value="crafts">Crafts</option> -->
-                <!-- <option value="seasonal">Seasonal</option> -->
-                <!-- <option value="custom" onclick="location.href='customorder.html'">Custom Orders</option>
+                    <option value="cross">Crosses</option>
+                  <option value="easter">Easter</option> -->
+                <!--  <option value="christmas">Christmas</option> -->
+                <!-- <option value="summer">Summer</option>
+              <option value="religious">Religious</option>   
             </select>
         </div>
+        <div class="header-actions-row">
         <a href="account.html" class="account-link" title="Login / Sign Up">
             <span class="account-icon" aria-label="Account"> -->
                 <!-- User SVG icon -->
@@ -57,52 +60,60 @@
                 </svg> -->
             </span>
         </a>
+    </div>
+</div>
     </header>
     <div class="custom-section">
-        <img class="logo-img" src="MCM2.png"/>
+        <img class="logo-img" src="images/MCM2.png"/>
     </div>
     <div class="container">
         <h1>Coming Soon</h1>
-        <p class="vintage-lead">Beautiful homemade wreaths and crafts will be available here.</p>
-        <!-- <form class="subscribe-line" id="subscribe-form" style="margin-top:1.5rem;">
-            <label for="subscribe-email" style="font-family:'Georgia',serif; color:#7c5a2a; font-size:1.08rem;">
-                Subscribe to be notified when we launch:
-            </label><br>
-            <input type="email" id="subscribe-email" name="email" placeholder="Your email address" required style="padding:0.4em 1em; border-radius:6px; border:1.5px solid #e2c9a0; font-family:'Georgia',serif; font-size:1rem; margin-top:0.5em;">
-            <button type="submit" style="background:#b86b36; color:#fff; border:none; border-radius:6px; padding:0.4em 1.2em; font-family:'Georgia',serif; font-size:1rem; margin-left:0.5em; cursor:pointer;">Subscribe</button>
-        </form> -->
+        <p class="vintage-lead">Beautiful homemade wreaths will be available here soon.</p>
+        <p class="vintage-lead">In the meantime, please feel free to browse a selection of our products below.</p>
+        <!-- <h1>Handmade Wreaths for Heartmade Homes</h1>
+         <p class="vintage-lead">Fueled by nostalgia, every wreath is an original work of heart. Vintage inspired with a touch of elegant whimsy.</p>
+         <p class="contact-line">Contact: <a class="email" href="mailto:your@email.com">your@email.com</a></p>
+    </div> -->
+    </div>
+    <div class="photo-grid">
+        <!-- Photo Grid Section -->
+        <img src="Images/SunflowerCross.JPG" alt="Sunflower Cross" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/BirthdayBlessings.JPG" alt="Birthday Blessings" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/CamperWreath.jpg" alt="Camper Wreath" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/Christmas.JPG" alt="Christmas" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/CabbageRoseWreath.JPG" alt="Cabbage Rose Wreath" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/SummerWreath.JPG" alt="Summer Wreath" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/WheelWreath.JPG" alt="Wheel Wreath" width="1536" height="2048" class="photo-grid-img">
+        <img src="Images/Easter.JPG" alt="Easter Wreath" width="1536" height="2048" class="photo-grid-img">
     </div>
     <footer style="text-align:center; margin-top:2rem; color:#4a3c2a; font-size:1rem;">
     </footer>
-    <div class="bottom-bar" style="display:none;">
-        <a href="homepage.html" class="home-btn" title="Home">Home</a>
-        <a href="wreaths.html" class="wreath-btn" title="Wreaths">Wreaths</a>
-        <a href="customorder.html" class="customorders-btn" title="Custom Orders">Custom Orders</a>
+    <div class="bottom-bar">
+        <!-- <a href="customorder.html" class="customorders-btn" title="Custom Orders">Custom Orders</a> -->
         <a href="aboutus.html" class="aboutus-btn" title="About Us">About Us</a>
     </div>
     <div class="copyright-bar">
         Copyright © 2025 Potluck Wreaths - All Rights Reserved.
     </div>
-    <script src="Scripts/general.js"></script>
+
+    <!-- Firebase Core SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <!-- Firebase Authentication SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var subscribeForm = document.getElementById('subscribe-form');
-        if (subscribeForm) {
-            subscribeForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                var email = document.getElementById('subscribe-email').value;
-                // Open mail client with pre-filled message to tanya@potluckwreaths.com
-                var subject = encodeURIComponent('Potluck Wreaths Launch Notification Request');
-                var body = encodeURIComponent(
-                    'Hello Tanya,\n\n' +
-                    'A customer would like to be notified when the Potluck Wreaths site launches.\n\n' +
-                    'Customer email: ' + email + '\n\n' +
-                    'Best regards,\nPotluck Wreaths Website'
-                );
-                window.location.href = 'mailto:tanya@potluckwreaths.com?subject=' + subject + '&body=' + body;
-            });
-        }
-    });
+        const firebaseConfig = {
+            apiKey: "AIzaSyBDZKXcNIYjvsF2PbSg1wqgwagnKmg2gBg",
+            authDomain: "potluck-wreaths.firebaseapp.com",
+            projectId: "potluck-wreaths",
+            storageBucket: "potluck-wreaths.firebasestorage.app",
+            messagingSenderId: "113603226735",
+            appId: "1:113603226735:web:8f26f3aa93a0674092f19a",
+            measurementId: "G-7M8NFJD863"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        window.auth = auth;
     </script>
+    <script src="Scripts/general.js"></script>
 </body>
 </html>
