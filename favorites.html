@@ -12,17 +12,7 @@
         <div class="header-title">
             <h2>Potluck Wreaths</h2>
             <div class="header-row">
-                <form class="header-search" action="#" method="get" role="search">
-                    <input type="text" class="search-input" placeholder="Search..." name="q" aria-label="Search">
-                    <button type="submit" class="search-btn" aria-label="Search">
-                        <!-- Magnifier SVG icon -->
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4a3c2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
-                    </button>
-                </form>
-                <select id="categoriesDropdown" class="categories-dropdown" aria-label="Categories">
+                <select id="categoriesDropdown" class="categories-dropdown wide-categories" aria-label="Categories">
                     <option value="">Categories</option>
                     <option value="cross">Crosses</option>
                     <option value="easter">Easter</option>
@@ -71,9 +61,7 @@
     <div class="container">
         <h1>Your Favorites</h1>
         <p class="vintage-lead">Here are the wreaths and crafts you've added to your favorites.</p>
-        <div style="margin:2rem 0; color:#b86b36; font-size:1.2rem; font-family:'Georgia',serif;">
-            (Favorites functionality coming soon!)
-        </div>
+        <div id="favorites-list" class="favorites-list"></div>
     </div>
     <footer style="text-align:center; margin-top:2rem; color:#4a3c2a; font-size:1rem;">
     </footer>
@@ -101,6 +89,43 @@
         const app = firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         window.auth = auth;
+
+        // Render favorites from localStorage
+        function renderFavorites() {
+            const favoritesList = document.getElementById('favorites-list');
+            favoritesList.innerHTML = '';
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            if (favorites.length === 0) {
+                favoritesList.innerHTML = '<div style="color:#b86b36; font-size:1.1rem; margin:2rem 0;">No favorites yet. Add some from the product pages!</div>';
+                return;
+            }
+            favorites.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="product-img" width="180" height="240">
+                    <div class="product-info">
+                        <div class="product-name">${item.name}</div>
+                        <div class="product-price">${item.price}</div>
+                        <button class="remove-favorite-btn" data-product="${item.name}">Remove</button>
+                    </div>
+                `;
+                favoritesList.appendChild(card);
+            });
+
+            // Remove favorite handler
+            favoritesList.querySelectorAll('.remove-favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const name = this.getAttribute('data-product');
+                    let favs = JSON.parse(localStorage.getItem('favorites') || '[]');
+                    favs = favs.filter(f => f.name !== name);
+                    localStorage.setItem('favorites', JSON.stringify(favs));
+                    renderFavorites();
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderFavorites);
     </script>
     <script src="Scripts/general.js"></script>
 </body>
