@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summer Wreaths</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/general.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h2>Potluck Wreaths</h2>
+            <div class="header-row">
+                <select id="categoriesDropdown" class="categories-dropdown wide-categories" aria-label="Categories">
+                    <option value="">Categories</option>
+                    <option value="cross">Crosses</option>
+                    <option value="easter">Easter</option>
+                    <option value="christmas">Christmas</option>
+                    <option value="summer">Summer</option>
+                    <option value="religious">Religious</option>
+                </select>
+            </div>
+            <div class="header-actions-row">
+                <a href="account.html" class="account-link" title="Login / Sign Up">
+                    <span class="account-icon" aria-label="Account">
+                        <!-- User SVG icon -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a3c2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M2 20c0-4 8-6 10-6s10 2 10 6"/>
+                        </svg>
+                    </span>
+                    <span class="account-text">Login / Sign Up</span>
+                </a>
+                <a href="favorites.html" class="wishlist-link" title="View Wishlist">
+                    <span class="wishlist-icon" aria-label="Wishlist">
+                        <!-- Heart SVG icon -->
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4a3c2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+                        </svg>
+                    </span>
+                </a>
+                <a href="bag.html" class="cart-link" title="View Cart">
+                    <span class="cart-icon" aria-label="Cart">
+                        <!-- Simple cart SVG icon -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4a3c2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="custom-section">
+        <img class="logo-img" src="images/MCM2.png"/>
+    </div>
+    <div class="container">
+        <h1>☀️ Summer Wreaths ☀️</h1>
+        <!-- Add more content or images as needed -->
+    </div>
+    <div class="store-grid">
+        <div class="product-card">
+            <img src="Images/SummerWreath.JPG" alt="Summer Wreath" class="product-img" width="384" height="512">
+            <div class="product-info">
+                <div class="product-name">Summer Wreath</div>
+                <div class="product-price">$39.00</div>
+                <div class="product-actions-row">
+                    <button class="add-to-favorites-btn" data-product="Summer Wreath" title="Add to Favorite">
+                        Add to Favorites
+                    </button>
+                    <button class="add-to-cart-btn" data-product="Summer Wreath">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="Images/SunflowerCross.JPG" alt="Sunflower Cross" class="product-img" width="384" height="512">
+            <div class="product-info">
+                <div class="product-name">Sunflower Cross</div>
+                <div class="product-price">$40.00</div>
+                <div class="product-actions-row">
+                    <button class="add-to-favorites-btn" data-product="Sunflower Cross" title="Add to Favorite">
+                        Add to Favorites
+                    </button>
+                    <button class="add-to-cart-btn" data-product="Sunflower Cross">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="Images/CamperWreath.jpg" alt="Camper Wreath" class="product-img" width="384" height="512">
+            <div class="product-info">
+                <div class="product-name">Camper Wreath</div>
+                <div class="product-price">$43.00</div>
+                <div class="product-actions-row">
+                    <button class="add-to-favorites-btn" data-product="Camper Wreath" title="Add to Favorite">
+                        Add to Favorites
+                    </button>
+                    <button class="add-to-cart-btn" data-product="Camper Wreath">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="Images/WheelWreath.JPG" alt="Wheel Wreath" class="product-img" width="384" height="512">
+            <div class="product-info">
+                <div class="product-name">Wheel Wreath</div>
+                <div class="product-price">$41.00</div>
+                <div class="product-actions-row">
+                    <button class="add-to-favorites-btn" data-product="Wheel Wreath" title="Add to Favorite">
+                        Add to Favorites
+                    </button>
+                    <button class="add-to-cart-btn" data-product="Wheel Wreath">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add more product cards as needed -->
+    </div>
+    <footer style="text-align:center; margin-top:2rem; color:#4a3c2a; font-size:1rem;">
+    </footer>
+    <div class="bottom-bar">
+        <a href="homepage.html" class="home-btn" title="Home">Home</a>
+        <!-- <a href="wreaths.html" class="wreath-btn" title="Wreaths">Wreaths</a> -->
+        <a href="customorder.html" class="customorders-btn" title="Custom Orders">Custom Orders</a>
+        <a href="aboutus.html" class="aboutus-btn" title="About Us">About Us</a>
+    </div>
+    <div class="copyright-bar">
+        Copyright © 2025 Potluck Wreaths - All Rights Reserved.
+    </div>
+    <!-- Firebase Core SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <!-- Firebase Authentication SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBDZKXcNIYjvsF2PbSg1wqgwagnKmg2gBg",
+            authDomain: "potluck-wreaths.firebaseapp.com",
+            projectId: "potluck-wreaths",
+            storageBucket: "potluck-wreaths.firebasestorage.app",
+            messagingSenderId: "113603226735",
+            appId: "1:113603226735:web:8f26f3aa93a0674092f19a",
+            measurementId: "G-7M8NFJD863"
+        };
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        window.auth = auth;
+    </script>
+    <script src="Scripts/general.js"></script>
+</body>
+</html>
